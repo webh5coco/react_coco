@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src='build/react.js'></script>
+<script src='build/react-dom.js'></script>
+<script src='build/browser.min.js'></script>
+</head>
+<body>
+  <div id="example"></div>
+  <script type='text/babel'>
+    
+    var He=React.createClass({//He就是一个组件类,He首字母必须大写
+      render:function(){//render方法用于输出组件
+        return <h1>Hello {this.props.name}</h1>
+        //组件的属性可以通过组件类的this.props对象获取
+      }
+    })
+//React.createClass方法用于生成一个组件类
+
+
+    ReactDOM.render(
+        <He name='coco'/>,
+        document.getElementById('example')
+        );
+
+/*变量 He 就是一个组件类。模板插入 <He /> 时，会自动生成 He 的一个实例（下文的"组件"都指组件类的实例）。所有组件类都必须有自己的 render 方法，用于输出组件。
+注意，组件类的第一个字母必须大写，否则会报错，比如He不能写成He。另外，组件类只能包含一个顶层标签，否则也会报错。*/
+  </script>
+</body>
+</html>
